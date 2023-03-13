@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Waste Count per Day</title>
+  </head>
+  <body>
+    <h1>Waste Count per Day</h1>
+    <ul>
+      <% results.forEach(result => { %>
+      <li><%= result._id %>: <%= result.count %></li>
+      <% }); %>
+    </ul>
+  </body>
+</html>

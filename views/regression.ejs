@@ -1,0 +1,52 @@
+<!-- views/index.ejs -->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Regression Analysis</title>
+</head>
+<body>
+  <h1>Regression Analysis</h1>
+
+  <h2>Data</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Number of Waste Entries</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% data.forEach(entry => { %>
+        <tr>
+          <td><%= entry.date %></td>
+          <td><%= entry.count %></td>
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>
+
+  <h2>Data Points</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Date (Milliseconds)</th>
+        <th>Number of Waste Entries</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% dataPoints.forEach(point => { %>
+        <tr>
+          <td><%= point[0] %></td>
+          <td><%= point[1] %></td>
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>
+
+  <h2>Regression Results</h2>
+  <p>Slope: <%= result.equation[0] %></p>
+  <p>Y-intercept: <%= result.equation[1] %></p>
+  <!-- Additional output or visualizations as desired -->
+</body>
+</html>
